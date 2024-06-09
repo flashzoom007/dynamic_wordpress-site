@@ -1,0 +1,31 @@
+.error {
+  background: red;
+  padding: 10px;
+  font-size: 0.875em;
+  margin-top: 0.25em;
+}
+
+body {
+  padding: 50px 100px;
+}
+body form#loginForm,
+body form#registrationForm,
+body form#accountSettingsForm {
+  display: grid;
+  gap: 10px;
+}
+body button {
+  max-width: 20%;
+}
+body .error-login {
+  background: red;
+  padding: 10px;
+  color: #fff;
+}
+body .error-login a {
+  color: #c4c3c3;
+}
+body .successfull-user {
+  background: rgb(0, 255, 0);
+  padding: 10px;
+}/*# sourceMappingURL=style.css.map */
