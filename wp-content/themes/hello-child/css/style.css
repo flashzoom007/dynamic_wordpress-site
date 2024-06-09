@@ -1,5 +1,5 @@
 .error {
-  background: red;
+  color: red;
   padding: 10px;
   font-size: 0.875em;
   margin-top: 0.25em;
@@ -18,9 +18,8 @@ body button {
   max-width: 20%;
 }
 body .error-login {
-  background: red;
+  color: red;
   padding: 10px;
-  color: #fff;
 }
 body .error-login a {
   color: #c4c3c3;

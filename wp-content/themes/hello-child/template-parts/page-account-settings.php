@@ -4,7 +4,7 @@
 get_header();
 
 if (!is_user_logged_in()) {
-    wp_redirect(site_url('/login-page/')); // Replace '/login-page/' with your actual login page URL
+    wp_redirect(site_url('/login-page/'));
     exit;
 }
 

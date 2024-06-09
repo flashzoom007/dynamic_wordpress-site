@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $confirm_password = $_POST['confirm_password'];
 
     if ($password !== $confirm_password) {
-        echo "Passwords do not match.";
+        echo "<p class='error-login'>Passwords do not match.</p>";
     } else {
         // function to call the register the user
         $response = wp_remote_post(rest_url('wp/v2/users/register'), array(
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<form id="registrationForm" method="post">
+<form id="registrationForm" method="post" autocomplete="off">
     <label for="first_name">Your First Name*:</label>
     <input type="text" id="first_name" name="first_name" maxlength="50" required>
 

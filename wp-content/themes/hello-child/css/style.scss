@@ -2,7 +2,8 @@ $red-clr: red;
 $success-color: rgb(0 255 0);
 $white-clr: #fff;
 .error {
-    background: $red-clr;
+    // background: $red-clr;
+    color: $red-clr;
     padding: 10px;
     font-size: 0.875em;
     margin-top: 0.25em;
@@ -22,9 +23,9 @@ body {
         max-width: 20%;
     }
     .error-login{
-        background: $red-clr;
+        color: $red-clr;
         padding: 10px;
-        color: $white-clr;
+        // color: $white-clr;
         a {
             color: #c4c3c3;
         }
