@@ -5,9 +5,9 @@ get_header();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $credentials = array(
-        'user_login'    => sanitize_text_field($_POST['username']),
+        'user_login' => sanitize_text_field($_POST['username']),
         'user_password' => $_POST['password'],
-        'remember'      => isset($_POST['remember']) ? true : false,
+        'remember' => isset($_POST['remember']) ? true : false,
     );
 
     $user = wp_signon($credentials, false);
@@ -22,57 +22,63 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 ?>
+<div class="row intro">
+    <div class="col-md-6">
+        <img src="http://localhost/dynamic-site/wp-content/uploads/2024/06/child_background.png" alt="child_background" style=" height: 70vh; width: 100%;">
+    </div>
+    <div class="col-md-6" style="background-color: #f7fafc;">
+        <form id="loginForm" method="post">
+            <label for="username">Username or Email:</label>
+            <input type="text" id="username" name="username" required>
 
-<form id="loginForm" method="post">
-    <label for="username">Username or Email:</label>
-    <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+            <label for="remember" class="remember-sec">
+                <input type="checkbox" id="remember" name="remember"> Remember Me
+            </label>
 
-    <label for="remember" class="remember-sec">
-        <input type="checkbox" id="remember" name="remember"> Remember Me
-    </label>
-
-    <button type="submit">Login</button>
-</form>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
 
 <script>
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    let valid = true;
-    
-    // Get form values
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        let valid = true;
 
-    // Clear previous error messages
-    document.querySelectorAll('.error').forEach(el => el.remove());
+        // Get form values
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
-    // Validate username
-    if (username === '') {
-        valid = false;
-        showError('username', 'Username is required.');
+        // Clear previous error messages
+        document.querySelectorAll('.error').forEach(el => el.remove());
+
+        // Validate username
+        if (username === '') {
+            valid = false;
+            showError('username', 'Username is required.');
+        }
+
+        // Validate password
+        if (password === '') {
+            valid = false;
+            showError('password', 'Password is required.');
+        }
+
+        if (!valid) {
+            event.preventDefault();
+        }
+    });
+
+    function showError(id, message) {
+        const inputField = document.getElementById(id);
+        const error = document.createElement('span');
+        error.className = 'error';
+        error.style.color = 'red';
+        error.textContent = message;
+        inputField.parentNode.insertBefore(error, inputField.nextSibling);
     }
-
-    // Validate password
-    if (password === '') {
-        valid = false;
-        showError('password', 'Password is required.');
-    }
-
-    if (!valid) {
-        event.preventDefault();
-    }
-});
-
-function showError(id, message) {
-    const inputField = document.getElementById(id);
-    const error = document.createElement('span');
-    error.className = 'error';
-    error.style.color = 'red';
-    error.textContent = message;
-    inputField.parentNode.insertBefore(error, inputField.nextSibling);
-}
 </script>
 
 <?php
