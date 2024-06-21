@@ -1,8 +1,10 @@
 $red-clr: red;
 $success-color: rgb(0 255 0);
 $white-clr: #fff;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 .error {
-    // background: $red-clr;
     color: $red-clr;
     padding: 10px;
     font-size: 0.875em;
@@ -11,6 +13,7 @@ $white-clr: #fff;
 
 body {
     padding: 50px 100px;
+    font-family: NotoSans-Regular !important;
 
     form#loginForm,
     form#registrationForm,
@@ -19,19 +22,83 @@ body {
         gap: 10px;
     }
 
+    h4 {
+        font-family: NotoSans-Regular;
+        font-weight: 500;
+        line-height: 1.2;
+        font-size: 24px;
+        color: #212529;
+    }
+
     button {
         max-width: 20%;
     }
-    .error-login{
+
+    .error-login {
         color: $red-clr;
         padding: 10px;
-        // color: $white-clr;
         a {
             color: #c4c3c3;
         }
     }
+
     .successfull-user {
         background: $success-color;
         padding: 10px;
+    }
+    p{
+        color: #6c757d !important;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    label {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #0b0c1a;
+        &.remember-sec{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+    ::placeholder {
+        color: red;
+        opacity: 1; /* Firefox */
+      }
+    input {
+        background: #ffffff;
+        border: 2px solid #dadff3;
+        border-radius: 4px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        color: #0b0c1a;
+        height: 48px;
+    }
+    .site-navigation ul.menu li a {
+        display: block;
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+    button {
+        background: linear-gradient(90deg, rgba(207, 85, 112, 1) 0%, rgba(181, 57, 81, 1) 80%);
+        color: #fff !important;
+        font-size: 16px !important;
+        border: none;
+        height: 42px;
+        opacity: 0.9;
+        font-size: 14px;
+        border-radius: 8px;
+        padding: 10px 20px;
+        cursor: pointer;
+        width: 100%;
+        max-width: 100%;
+    }
+    .row.intro {
+        height: 100vh;
     }
 }

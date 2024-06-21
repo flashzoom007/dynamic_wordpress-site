@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 .error {
   color: red;
   padding: 10px;
@@ -7,12 +8,20 @@
 
 body {
   padding: 50px 100px;
+  font-family: NotoSans-Regular !important;
 }
 body form#loginForm,
 body form#registrationForm,
 body form#accountSettingsForm {
   display: grid;
   gap: 10px;
+}
+body h4 {
+  font-family: NotoSans-Regular;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 24px;
+  color: #212529;
 }
 body button {
   max-width: 20%;
@@ -27,4 +36,63 @@ body .error-login a {
 body .successfull-user {
   background: rgb(0, 255, 0);
   padding: 10px;
+}
+body p {
+  color: #6c757d !important;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+body label {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0b0c1a;
+}
+body label.remember-sec {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+body ::-moz-placeholder {
+  color: red;
+  opacity: 1; /* Firefox */
+}
+body ::placeholder {
+  color: red;
+  opacity: 1; /* Firefox */
+}
+body input {
+  background: #ffffff;
+  border: 2px solid #dadff3;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #0b0c1a;
+  height: 48px;
+}
+body .site-navigation ul.menu li a {
+  display: block;
+  padding: 8px 15px;
+  font-size: 16px;
+}
+body button {
+  background: linear-gradient(90deg, rgb(207, 85, 112) 0%, rgb(181, 57, 81) 80%);
+  color: #fff !important;
+  font-size: 16px !important;
+  border: none;
+  height: 42px;
+  opacity: 0.9;
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 100%;
+}
+body .row.intro {
+  height: 100vh;
 }/*# sourceMappingURL=style.css.map */

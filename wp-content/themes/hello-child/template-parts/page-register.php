@@ -16,21 +16,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<p class='error-login'>Passwords do not match.</p>";
     } else {
         // function to call the register the user
-        $response = wp_remote_post(rest_url('wp/v2/users/register'), array(
-            'method' => 'POST',
-            'body' => json_encode(
-                array(
-                    'first_name' => $first_name,
-                    'last_name' => $last_name,
-                    'child_first_name' => $child_first_name,
-                    'email' => $email,
-                    'password' => $password,
-                )
-            ),
-            'headers' => array(
-                'Content-Type' => 'application/json',
-            ),
-        )
+        $response = wp_remote_post(
+            rest_url('wp/v2/users/register'),
+            array(
+                'method' => 'POST',
+                'body' => json_encode(
+                    array(
+                        'first_name' => $first_name,
+                        'last_name' => $last_name,
+                        'child_first_name' => $child_first_name,
+                        'email' => $email,
+                        'password' => $password,
+                    )
+                ),
+                'headers' => array(
+                    'Content-Type' => 'application/json',
+                ),
+            )
         );
 
         // Check the errors while registrtion
@@ -43,28 +45,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+<div class="row intro">
+    <div class="col-md-6">
+        <img src="http://localhost/dynamic-site/wp-content/uploads/2024/06/child_background.png" alt="child_background">
+    </div>
+    <div class="col-md-6" style="background-color: #f7fafc;">
+        <h4>Create a Free Account</h4>
+        <p>Your registration includes a free personalized Treatment Map for your child.</p>
+        <form id="registrationForm" method="post" autocomplete="off">
+            <label for="first_name">Your First Name*:</label>
+            <input type="text" id="first_name" name="first_name" maxlength="50" required>
 
-<form id="registrationForm" method="post" autocomplete="off">
-    <label for="first_name">Your First Name*:</label>
-    <input type="text" id="first_name" name="first_name" maxlength="50" required>
+            <label for="last_name">Your Last Name*:</label>
+            <input type="text" id="last_name" name="last_name" maxlength="50" required>
 
-    <label for="last_name">Your Last Name*:</label>
-    <input type="text" id="last_name" name="last_name" maxlength="50" required>
+            <label for="child_first_name">Your Child's First Name*:</label>
+            <input type="text" id="child_first_name" name="child_first_name" maxlength="50" required>
 
-    <label for="child_first_name">Your Child's First Name*:</label>
-    <input type="text" id="child_first_name" name="child_first_name" maxlength="50" required>
+            <label for="email">Your Email Address*:</label>
+            <input type="email" id="email" name="email" required>
 
-    <label for="email">Your Email Address*:</label>
-    <input type="email" id="email" name="email" required>
+            <label for="password">Password*:</label>
+            <input type="password" id="password" name="password" minlength="8" required>
 
-    <label for="password">Password*:</label>
-    <input type="password" id="password" name="password" minlength="8" required>
+            <label for="confirm_password">Confirm Password*:</label>
+            <input type="password" id="confirm_password" name="confirm_password" minlength="8" required>
 
-    <label for="confirm_password">Confirm Password*:</label>
-    <input type="password" id="confirm_password" name="confirm_password" minlength="8" required>
-
-    <button type="submit">Register</button>
-</form>
+            <button type="submit">Submit</button>
+        </form>
+        <p style="font-size: 14px; font-weight: 400; text-align: center;">By clicking on submit, you agree to our Terms of Use and Privacy Policy.</p>
+    </div>
+</div>
 
 <script>
     document.getElementById('registrationForm').addEventListener('submit', function (event) {

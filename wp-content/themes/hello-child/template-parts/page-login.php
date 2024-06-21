@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
 
-    <label for="remember">
+    <label for="remember" class="remember-sec">
         <input type="checkbox" id="remember" name="remember"> Remember Me
     </label>
 
